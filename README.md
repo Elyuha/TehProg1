@@ -47,4 +47,5 @@
       ● public,
       ● protected,
       ● private
+      
 Подсчет суммы нечетных элементов
