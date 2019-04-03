@@ -16,6 +16,7 @@ int main(){
 	Q_Private q_1;
 	Q_Prot q_2;
 	Q_Publ q_3;
+	char ex = 'a';
 	int choise;
 	do {
 		system("CLS");
@@ -64,20 +65,17 @@ int main(){
 				cin >> choise;
 				switch (choise) {
 				case 1: {
-					q_1.setLast(qu.getLast());
-					q_1.setSum(qu.getSum());
+					q_1._copypriv(qu);
 					q_1.function();
 					break;
 				}
 				case 2: {
-					q_2.setLast(qu.getLast());
-					q_2.setSum(qu.getSum());
+					q_2._copyprot(qu);
 					q_2.function();
 					break;
 				}
 				case 3: {
-					q_3.setLast(qu.getLast());
-					q_3.setSum(qu.getSum());
+					q_3._copy(qu);
 					q_3.function();
 					break;
 				}
@@ -89,7 +87,7 @@ int main(){
 			if (qu.getSum() == 0) 
 				cout << "Копировать нечего. Очередь пуста." << endl;
 			else {
-				qu._copy(cop);
+				cop._copy(qu);
 				cop._pin();
 			}
 			system("pause");
@@ -104,7 +102,8 @@ int main(){
 			break;
 		}
 		case 7: {
-			return 0;
+			ex = 'b';
+			break;
 		}
 		default: {
 			cout << "Введите корректный номер операции" << endl;
@@ -112,5 +111,5 @@ int main(){
 		}
 		}
 	}
-	while (choise);
+	while (ex != 'b');
 }

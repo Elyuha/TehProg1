@@ -14,6 +14,3 @@ void Q_Publ::function() {
 	std::cout << "Результат = " << res << std::endl;
 	system("pause");
 }
-
-void Q_Publ::setSum(int argument) { Queue::setSum(argument); }
-void Q_Publ::setLast(elem *argument) { Queue::setLast(argument); }

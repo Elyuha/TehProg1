@@ -16,14 +16,14 @@ void merge(Queue &q1, Queue &q2, Queue &res) {
 	}
 	ind_q1 = q1.getSum() - 1;
 
-	while (ind_q1 > 1) {
+	while (ind_q1 > 0) {
 		mass_q1[ind_q1] = temp_q1->value;
 		temp_q1 = temp_q1->prev;
 		ind_q1--;
 	}
 	mass_q1[ind_q1] = temp_q1->value;
 
-	while (ind_q2 > 1) {
+	while (ind_q2 > 0) {
 		mass_q2[ind_q2--] = temp_q2->value;
 		temp_q2 = temp_q2->prev;
 	}

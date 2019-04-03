@@ -1,9 +1,7 @@
 #include <iostream>
 #include "ProtectedFunc.h"
 
-
-elem *Q_Prot::getLast(void) { return Queue::getLast(); }
-int Q_Prot::getSum(void) { return Queue::getSum(); }
+void Q_Prot::_copyprot(Queue &qu) { Queue::_copy(qu); }
 
 void Q_Prot::function() {
 	int res = 0;
@@ -18,6 +16,3 @@ void Q_Prot::function() {
 	std::cout << "Результат = " << res << std::endl;
 	system("pause");
 }
-
-void Q_Prot::setSum(int argument) { Queue::setSum(argument); }
-void Q_Prot::setLast(elem *argument) { Queue::setLast(argument); }

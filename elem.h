@@ -2,5 +2,5 @@
 
 struct elem {
 	elem *prev;
-	int value; // значение элемента
+	int value; 
 };

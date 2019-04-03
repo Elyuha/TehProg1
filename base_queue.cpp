@@ -56,29 +56,29 @@ void Queue::_pin() {
 	}
 	for (i = 0; i < sum; i++)
 		cout << tmp[i] << " ";
+	delete [] tmp;
 }
 
-void Queue::_copy(Queue &cop) {
-	elem *temp = last;
-	int *tmp = new int[sum];
-	int i = cop.sum;
+void Queue::_copy(Queue &qu) {
+	elem *temp = qu.last;
+	int *tmp = new int[qu.sum];
+	int i = sum;
 	while (i > 0) {
-		cop._delete();
+		this->_delete();
 		i--;
 	}
-	i = sum - 1;
-	while (temp != first) {
+	i = qu.sum - 1;
+	while (temp != qu.first) {
 		tmp[i] = temp->value;
 		temp = temp->prev;
 		i--;
 	}
 	tmp[i] = temp->value;
-	for (i = 0; i < sum; i++) {
-		cop._add(tmp[i]);
+	for (i = 0; i < qu.sum; i++) {
+		this->_add(tmp[i]);
 	}
+	delete [] tmp;
 }
 
-void Queue::setLast(elem *argument) { last = argument; }
-void Queue::setSum(int argument) { sum = argument; }
 elem *Queue::getLast() { return last; }
 int Queue::getSum() { return sum; }

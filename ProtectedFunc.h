@@ -3,9 +3,6 @@
 
 class Q_Prot :protected Queue {
 public:
+	void _copyprot(Queue &qu);
 	void function();
-	void setSum(int argument);
-	int getSum(void);
-	elem *getLast(void);
-	void setLast(elem *argument);
 };
